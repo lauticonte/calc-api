@@ -66,7 +66,9 @@ router.get("/div/:a/:b", async function (req, res) {
 });
 
 router.get("/history", async function (req, res) {
-    return res.send({ result: "No implementado" });
+    const operations = await Operation.findAll();
+
+    return res.send({ operations });
 });
 
 module.exports = router;
